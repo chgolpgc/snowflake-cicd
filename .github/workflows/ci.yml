@@ -36,8 +36,8 @@ jobs:
                 python -m pip install --upgrade pip
                 pip install dbt-snowflake
             - name: Debug connection
-              run: dbt debug --target dev
+              run: cd dbt_project && dbt debug --target dev
             - name: Run dbt models
-              run: dbt run --target dev
+              run: cd dbt_project && dbt run --target dev
             - name: Run dbt tests
-              run: dbt test --target dev
+              run: cd dbt_project && dbt test --target dev
